@@ -40,6 +40,9 @@ Bot.on('message', async message =>{
     Descrizione = message.content;
     message.channel.send("Description catched, now use /create or give me other infos");
   }*/
+    if(msg==Prefix+"TEST"){
+    message.edit("Testo modificato");
+  }
   if(Passo0 && msg == Prefix + "AEVENT"){
     Passo0=false;
     Passo1=true;
