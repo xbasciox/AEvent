@@ -160,9 +160,9 @@ Bot.on('messageReactionAdd', (reaction, user) => {
     if (reaction.emoji.name === "✅"){
       //reaction.message.channel.send("Reazione ricevuta da "+ user.username);
       const embed = new Discord.RichEmbed();
-      message.channel.send("Embed istance created");
+      reaction.message.channel.send("Embed istance created");
       const prev = reaction.message.embeds[0];
-      message.channel.send("Previous message istance created");
+      reaction.message.channel.send("Previous message istance created");
       embed.color = prev.color;
       embed.title = prev.title;
       embed.description = prev.description
@@ -173,7 +173,7 @@ Bot.on('messageReactionAdd', (reaction, user) => {
       embed.fields.push({name: prev.fields[1].name,value: prev.fields[1].value, inline: true});
       //SPAZIO BIANCO
       embed.fields.push({name: prev.fields[2].name,value: prev.fields[2].value, inline: true});
-      message.channel.send("Primi fields creati");
+      reaction.message.channel.send("Primi fields creati");
       let str = prev.footer.text;
         ind=6;
         num=0;
