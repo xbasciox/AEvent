@@ -21,7 +21,7 @@ var Date = "";
 var Time = "";
 var ChannelID = "";
 
-Bot.on('message', async message =>{
+Bot.on('message',message =>{
   if(message.author.bot) return;
   let msg = message.content.toUpperCase();
   let sender = message.author;
@@ -40,7 +40,8 @@ Bot.on('message', async message =>{
     Descrizione = message.content;
     message.channel.send("Description catched, now use /create or give me other infos");
   }*/
-    if(msg==Prefix+"TEST"){
+  if(msg==Prefix+"TEST"){
+    message.channel.send("Provo a modificare il testo");
     message.edit("Testo modificato");
   }
   if(Passo0 && msg == Prefix + "AEVENT"){
