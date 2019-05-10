@@ -362,6 +362,14 @@ Bot.on('messageReactionRemove', (reaction, user) => {
         embed.timestamp = prev.timestamp;
         reaction.message.edit({embed});
       }
+    if (reaction.emoji.name === ":eight_spoked_asterisk:"){
+      const embed = new Discord.RichEmbed();
+      const prev = reaction.message.embeds[0];    
+      embed.color = prev.color;
+      embed.title = prev.title;
+      embed.description = prev.description
+      reaction.message.edit({embed});
+    }
   }
 });
 
