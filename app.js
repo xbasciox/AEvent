@@ -3,8 +3,8 @@ const Bot = new Discord.Client();
 
 Bot.login('NTc2MDM0NjQxOTU0NDcxOTQ4.XNQpNg.k4liTFYr4own5u238dMzGtMkKYQ');
 
-var accepted = new Array();
-var declined = new Array();
+const accepted = new Array();
+const declined = new Array();
 
 var Passo0=true;
 var Passo1=false;
