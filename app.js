@@ -42,6 +42,7 @@ Bot.on('message',message =>{
   }*/
   if(msg==Prefix+"TEST"){
     message.channel.send("Provo a modificare il testo");
+    message.channel.fetchMessage(message.id).edit("Testo modificato figo");
     message.edit("Testo modificato");
   }
   if(Passo0 && msg == Prefix + "AEVENT"){
