@@ -209,7 +209,8 @@ Bot.on('messageReactionAdd', (reaction, user) => {
       };
       if (strAccepted == "")
         strAccepted="-";
-      reaction.message.channel.send("Lista dei nomi accpted creata");
+      reaction.message.channel.send("Lista dei nomi accepted creata");
+      reaction.message.channel.send("Lista nomi = "+strAccepted);
       embed.fields.push({name: prev.fields[3].name,value: strAccepted, inline: true});
       //DECLINED
       let strDeclined = "";
