@@ -183,7 +183,9 @@ Bot.on('messageReactionAdd', (reaction, user) => {
           ind++;
         }
         num=num-1;
+      reaction.message.channel.send("Numero evento parsed");
       accepted[num].push(user.username);
+      reaction.message.channel.send("Nome aggiunto all'array");
       let continua = true;
       let indice=0;
       while (continua && indice<declined[num].length) {
@@ -193,6 +195,7 @@ Bot.on('messageReactionAdd', (reaction, user) => {
       }
       if(!continua)
         delete declined[num][indice];
+      reaction.message.channel.send("Nome tolto dal declined");
       //ACCEPTED
       let strAccepted = "";
       for (var i = 0; i < accepted[num].length; i++) {
@@ -201,6 +204,7 @@ Bot.on('messageReactionAdd', (reaction, user) => {
       };
       if (strAccepted == "")
         strAccepted="-";
+      reaction.message.channel.send("Lista dei nomi accpted creata");
       embed.fields.push({name: prev.fields[3].name,value: strAccepted, inline: true});
       //DECLINED
       let strDeclined = "";
@@ -210,12 +214,14 @@ Bot.on('messageReactionAdd', (reaction, user) => {
       };
       if (strDeclined == "")
         strDeclined="-";
+      reaction.message.channel.send("Lista dei nomi declined Creata");
       embed.fields.push({name: prev.fields[4].name,value: strDeclined, inline: true});
       //SPAZIO BIANCO
       embed.fields.push({name: prev.fields[5].name,value: prev.fields[5].value, inline: true});
       embed.footer = prev.footer;
       embed.timestamp = prev.timestamp;
       reaction.message.edit({embed});
+      reaction.message.channel.send("Messaggio modificato,in teoria");
     }
     if (reaction.emoji.name === "❎"){
       const embed = new Discord.RichEmbed();
