@@ -1,1 +1,1 @@
-worker: ndoe app.js
+worker: node app.js
