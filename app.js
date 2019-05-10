@@ -158,7 +158,7 @@ Bot.on('message', async message =>{
 Bot.on('messageReactionAdd', (reaction, user) => {
   if(!user.bot){
     if (reaction.emoji.name === "✅"){
-      //reaction.message.channel.send("Reazione ricevuta da "+ user.username);
+      reaction.message.channel.send("Reazione ricevuta da "+ user.username);
       const embed = new Discord.RichEmbed();
       const prev = reaction.message.embeds[0];
       embed.color = prev.color;
